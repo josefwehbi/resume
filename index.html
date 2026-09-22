@@ -52,16 +52,23 @@ section > h2{font-family:var(--display);font-weight:700;font-size:1.35rem;letter
 .body{max-width:42rem}
 .body p{margin:0 0 1rem}
 .body p:last-child{margin-bottom:0}
-.body::after{content:"";display:table;clear:both}
 
-/* About portrait */
-.portrait{float:right;width:9rem;height:9rem;border-radius:50%;object-fit:cover;border:1px solid var(--rule);background:var(--surface);margin:0 0 1.25rem 1.5rem;shape-outside:circle(50%)}
+/* About */
+.about-body{display:flex;align-items:center;gap:2.25rem}
+.about-text{flex:1;min-width:0}
+.portrait{flex:none;width:10.5rem;height:10.5rem;border-radius:50%;object-fit:cover;border:1px solid var(--rule);background:var(--surface)}
 
 /* Experience */
-.job{display:flex;gap:1.1rem;padding-bottom:2.25rem}
+.job{position:relative;padding-bottom:2.25rem}
 .job:last-child{padding-bottom:0}
-.job-body{flex:1;min-width:0}
-.logo-badge{flex:none;width:2.75rem;height:2.75rem;margin-top:.15rem;border-radius:8px;border:1px solid var(--rule);background:var(--surface);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:700;font-size:1.05rem;color:var(--muted)}
+.job-body{}
+.logo-badge{position:absolute;left:-2.65rem;top:50%;transform:translateY(-50%);width:2.3rem;height:2.3rem;display:flex;align-items:center;justify-content:center}
+.logo-badge img{max-width:100%;max-height:100%;width:auto;height:auto;display:block}
+.logo-badge .logo-dark{display:none}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]) .logo-badge .logo-light{display:none}
+  :root:not([data-theme="light"]) .logo-badge .logo-dark{display:block}
+}
 .company{font-family:var(--display);font-weight:700;font-size:1.3rem;margin:0}
 .company small{font-family:var(--body);font-weight:400;font-size:.95rem;color:var(--muted);margin-left:.4rem}
 .position{margin-top:1rem;padding-left:1.1rem;border-left:3px solid var(--rule)}
@@ -73,10 +80,6 @@ ul{margin:.5rem 0 0;padding-left:1.1rem}
 li{margin:.3rem 0}
 li::marker{color:var(--muted)}
 .highlight{background:var(--accent-soft);padding:0 .25em;border-radius:3px}
-
-/* Education */
-.edu-row{display:flex;gap:1.1rem}
-.edu-body{flex:1;min-width:0}
 
 /* Skills */
 .skill-group{margin-bottom:1.25rem}
@@ -92,10 +95,11 @@ li::marker{color:var(--muted)}
 @media (max-width:720px){
   header.hero{padding:3.5rem 0 2.5rem}
   section{grid-template-columns:1fr;padding:2.5rem 0}
-  .portrait{float:none;display:block;width:7rem;height:7rem;margin:0 0 1.25rem;shape-outside:none}
-  .job{gap:.85rem}
-  .logo-badge{width:2.25rem;height:2.25rem}
-  .edu-row{gap:.85rem}
+  .about-body{flex-direction:column;align-items:flex-start;gap:1.25rem}
+  .portrait{width:7.5rem;height:7.5rem}
+  .job{display:flex;gap:.75rem}
+  .logo-badge{position:static;transform:none;flex:none;width:2rem;height:2rem;margin-top:.2rem}
+  .job-body{flex:1;min-width:0}
 }
 @media (prefers-reduced-motion:no-preference){
   .name span{animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
@@ -109,7 +113,7 @@ li::marker{color:var(--muted)}
 
 <header class="hero">
   <h1 class="name"><span>Josef</span><span>Wehbi</span></h1>
-  <p class="role"><span>Aspiring Sales</span><span>FinTech 27 @ Bentley University</span></p>
+  <p class="role"><span>Aspiring Sales</span><span>FinTech 27 @ Bentley University</span><span>Greater Boston Area</span></p>
   <div class="actions">
     <a class="btn" href="Josef%20Wehbi%20Resume%202026.pdf" download>MY RESUME</a>
     <a class="icon-btn" href="https://www.linkedin.com/in/josefwehbi/" target="_blank" rel="noopener" aria-label="LinkedIn">
@@ -127,17 +131,20 @@ li::marker{color:var(--muted)}
         <path d="M3 7l9 6 9-6"/>
       </svg>
     </a>
-    <span class="meta">Boston, MA</span>
   </div>
 </header>
 
 <section aria-labelledby="about">
   <h2 id="about">About me</h2>
   <div class="body">
-    <img class="portrait" src="josef-wehbi.jpg" alt="Portrait of Josef Wehbi" width="900" height="900">
-    <p>I'm a FinTech student at Bentley University, graduating in Spring 2027, with minors in Professional Sales, Psychology, and Business Administration.</p>
-    <p>This summer at Litmos, I generated $500K+ in pipeline, the most on the sales team from July to August, and booked meetings at 200% of the full-time BDR quota. I've since moved into a part-time Business Development Representative role for the academic year, where I keep building pipeline and support the partnerships team.</p>
-    <p>I'm drawn to sales because I enjoy connecting people with solutions that actually solve their problems. I'm motivated by learning from high performers, contributing from day one, and growing into a closing role.</p>
+    <div class="about-body">
+      <img class="portrait" src="josef-wehbi.jpg" alt="Portrait of Josef Wehbi" width="900" height="900">
+      <div class="about-text">
+        <p>I'm a FinTech student at Bentley University, graduating in Spring 2027, with minors in Professional Sales, Psychology, and Business Administration.</p>
+        <p>This summer at Litmos, I generated $500K+ in pipeline, the most on the sales team from July to August, and booked meetings at 200% of the full-time BDR quota. I've since moved into a part-time Business Development Representative role for the academic year, where I keep building pipeline and support the partnerships team.</p>
+        <p>I'm drawn to sales because I enjoy connecting people with solutions that actually solve their problems. I'm motivated by learning from high performers, contributing from day one, and growing into a closing role.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -146,7 +153,9 @@ li::marker{color:var(--muted)}
   <div class="body">
 
     <article class="job">
-      <div class="logo-badge" aria-hidden="true">L</div>
+      <div class="logo-badge" aria-hidden="true">
+        <img src="assets/logos/litmos-icon.png" alt="">
+      </div>
       <div class="job-body">
         <h3 class="company">Litmos <small>Remote</small></h3>
         <div class="position current">
@@ -181,7 +190,10 @@ li::marker{color:var(--muted)}
     </article>
 
     <article class="job">
-      <div class="logo-badge" aria-hidden="true">N</div>
+      <div class="logo-badge" aria-hidden="true">
+        <img class="logo-light" src="assets/logos/nucar-light.png" alt="">
+        <img class="logo-dark" src="assets/logos/nucar-dark.png" alt="">
+      </div>
       <div class="job-body">
         <h3 class="company">Nucar Chevrolet of Lowell <small>Lowell, MA</small></h3>
         <div class="position">
@@ -202,14 +214,17 @@ li::marker{color:var(--muted)}
 <section aria-labelledby="education">
   <h2 id="education">Education</h2>
   <div class="body">
-    <div class="edu-row">
-      <div class="logo-badge" aria-hidden="true">B</div>
-      <div class="edu-body">
+    <article class="job">
+      <div class="logo-badge" aria-hidden="true">
+        <img class="logo-light" src="assets/logos/bentley-light.png" alt="">
+        <img class="logo-dark" src="assets/logos/bentley-dark.png" alt="">
+      </div>
+      <div class="job-body">
         <h3 class="company">Bentley University <small>Waltham, MA</small></h3>
         <p style="margin:.4rem 0 0">Bachelor of Science in FinTech, expected Spring 2027</p>
         <p class="meta">Minors in Professional Sales, Psychology, and Business Administration</p>
       </div>
-    </div>
+    </article>
   </div>
 </section>
 
