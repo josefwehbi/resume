@@ -32,12 +32,14 @@ a:focus-visible,.btn:focus-visible{outline:3px solid var(--accent);outline-offse
 .wrap{max-width:62rem;margin:0 auto;padding:0 1.5rem}
 
 /* Hero */
-header.hero{padding:5.5rem 0 3.5rem;border-bottom:1px solid var(--rule)}
+header.hero{padding:5.5rem 0 3.5rem;border-bottom:1px solid var(--rule);display:flex;align-items:flex-end;justify-content:space-between;gap:2.5rem}
+.hero-text{min-width:0}
 .name{font-family:var(--display);font-weight:800;font-size:clamp(3.6rem,13vw,9.5rem);line-height:.86;letter-spacing:-.045em;margin:0 0 2rem}
 .name span{display:block}
 .name span:last-child{color:var(--accent)}
 .role{font-family:var(--display);font-weight:500;font-size:clamp(1.25rem,2.6vw,1.6rem);line-height:1.3;max-width:34ch;margin:0 0 2rem}
 .actions{display:flex;flex-wrap:wrap;gap:.75rem 1.5rem;align-items:center}
+.portrait{flex:none;width:9.5rem;height:9.5rem;border-radius:50%;object-fit:cover;border:1px solid var(--rule);background:var(--surface)}
 .btn{display:inline-block;background:var(--accent);color:#fff;font-weight:600;text-decoration:none;padding:.8rem 1.3rem;border-radius:6px}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .btn{color:#0E1A14}}
 .btn:hover{filter:brightness(1.08)}
@@ -80,7 +82,8 @@ footer{padding:3.5rem 0 4rem}
 footer p{font-family:var(--display);font-weight:700;font-size:clamp(1.6rem,4vw,2.4rem);letter-spacing:-.02em;line-height:1.15;margin:0 0 1.25rem;max-width:22ch}
 
 @media (max-width:720px){
-  header.hero{padding:3.5rem 0 2.5rem}
+  header.hero{padding:3.5rem 0 2.5rem;flex-direction:column-reverse;align-items:flex-start;gap:1.5rem}
+  .portrait{width:5.5rem;height:5.5rem}
   section{grid-template-columns:1fr;padding:2.5rem 0}
 }
 @media (prefers-reduced-motion:no-preference){
@@ -94,13 +97,17 @@ footer p{font-family:var(--display);font-weight:700;font-size:clamp(1.6rem,4vw,2
 <div class="wrap">
 
 <header class="hero">
-  <h1 class="name"><span>Josef</span><span>Wehbi</span></h1>
-  <p class="role">Business Development Representative at Litmos and FinTech student at Bentley University.</p>
-  <div class="actions">
-    <a class="btn" href="Josef%20Wehbi%20Resume%202026.pdf" download>Download resume (PDF)</a>
-    <a href="https://www.linkedin.com/in/josefwehbi/">LinkedIn</a>
-    <a href="mailto:josefwehbi03@gmail.com">josefwehbi03@gmail.com</a>
+  <div class="hero-text">
+    <h1 class="name"><span>Josef</span><span>Wehbi</span></h1>
+    <p class="role">Business Development Representative at Litmos and FinTech student at Bentley University.</p>
+    <div class="actions">
+      <a class="btn" href="Josef%20Wehbi%20Resume%202026.pdf" download>Download resume (PDF)</a>
+      <a href="https://www.linkedin.com/in/josefwehbi/">LinkedIn</a>
+      <a href="mailto:josefwehbi03@gmail.com">josefwehbi03@gmail.com</a>
+      <span class="meta">Boston, MA</span>
+    </div>
   </div>
+  <img class="portrait" src="josef-wehbi.jpg" alt="Portrait of Josef Wehbi" width="900" height="900">
 </header>
 
 <section aria-labelledby="about">
@@ -181,6 +188,10 @@ footer p{font-family:var(--display);font-weight:700;font-size:clamp(1.6rem,4vw,2
     <div class="skill-group">
       <h3>Tools</h3>
       <ul class="tags"><li>Salesforce</li><li>Gong</li><li>Orum</li><li>ZoomInfo</li><li>Apollo.io</li><li>HubSpot</li><li>Microsoft Excel</li></ul>
+    </div>
+    <div class="skill-group">
+      <h3>Business and strategy</h3>
+      <ul class="tags"><li>Market research</li><li>Sales strategy</li><li>CRM workflows</li><li>Data analysis</li></ul>
     </div>
     <div class="skill-group">
       <h3>Certifications</h3>
