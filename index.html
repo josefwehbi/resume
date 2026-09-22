@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Josef Wehbi</title>
+<meta name="description" content="Josef Wehbi, Business Development Representative at Litmos and FinTech student at Bentley University.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%231F6F50'/><text x='50' y='70' font-size='62' text-anchor='middle' fill='white' font-family='Arial' font-weight='700'>J</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F4F6F8; --surface:#FFFFFF; --ink:#1A2433; --muted:#5B6778; --rule:#D5DBE3;
+  --accent:#1F6F50; --accent-soft:#E2EFE8;
+  --display:"Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+  --body:"Figtree", "Segoe UI", Roboto, Arial, sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#121A24; --surface:#18222F; --ink:#E7ECF2; --muted:#9AA6B6; --rule:#2B3747;
+    --accent:#5CC49A; --accent-soft:#1B3A2F;
+  }
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible,.btn:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:62rem;margin:0 auto;padding:0 1.5rem}
+
+/* Hero */
+header.hero{padding:5.5rem 0 3.5rem;border-bottom:1px solid var(--rule)}
+.name{font-family:var(--display);font-weight:800;font-size:clamp(3.6rem,13vw,9.5rem);line-height:.86;letter-spacing:-.045em;margin:0 0 2rem}
+.name span{display:block}
+.name span:last-child{color:var(--accent)}
+.role{font-family:var(--display);font-weight:500;font-size:clamp(1.25rem,2.6vw,1.6rem);line-height:1.3;max-width:34ch;margin:0 0 2rem}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem 1.5rem;align-items:center}
+.btn{display:inline-block;background:var(--accent);color:#fff;font-weight:600;text-decoration:none;padding:.8rem 1.3rem;border-radius:6px}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .btn{color:#0E1A14}}
+.btn:hover{filter:brightness(1.08)}
+.actions a:not(.btn){font-weight:500}
+
+/* Sections */
+section{display:grid;grid-template-columns:12rem 1fr;gap:1rem 3rem;padding:3.5rem 0;border-bottom:1px solid var(--rule)}
+section > h2{font-family:var(--display);font-weight:700;font-size:1.35rem;letter-spacing:-.01em;margin:.1rem 0 0}
+.body{max-width:42rem}
+.body p{margin:0 0 1rem}
+.body p:last-child{margin-bottom:0}
+
+/* Experience */
+.job{padding-bottom:2.25rem}
+.job:last-child{padding-bottom:0}
+.company{font-family:var(--display);font-weight:700;font-size:1.3rem;margin:0}
+.company small{font-family:var(--body);font-weight:400;font-size:.95rem;color:var(--muted);margin-left:.4rem}
+.position{margin-top:1rem;padding-left:1.1rem;border-left:3px solid var(--rule)}
+.position.current{border-left-color:var(--accent)}
+.position-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.1rem 1rem}
+.position h4{margin:0;font-size:1.02rem;font-weight:600}
+.dates{color:var(--muted);font-size:.95rem;white-space:nowrap}
+ul{margin:.5rem 0 0;padding-left:1.1rem}
+li{margin:.3rem 0}
+li::marker{color:var(--muted)}
+.highlight{background:var(--accent-soft);padding:0 .25em;border-radius:3px}
+
+/* Skills */
+.skill-group{margin-bottom:1.25rem}
+.skill-group:last-child{margin-bottom:0}
+.skill-group h3{font-size:1rem;font-weight:600;margin:0 0 .5rem}
+.tags{display:flex;flex-wrap:wrap;gap:.5rem;list-style:none;padding:0;margin:0}
+.tags li{margin:0;background:var(--surface);border:1px solid var(--rule);padding:.25rem .7rem;border-radius:999px;font-size:.93rem}
+
+.plain{list-style:none;padding:0}
+.plain li{margin:.45rem 0}
+.meta{color:var(--muted)}
+
+footer{padding:3.5rem 0 4rem}
+footer p{font-family:var(--display);font-weight:700;font-size:clamp(1.6rem,4vw,2.4rem);letter-spacing:-.02em;line-height:1.15;margin:0 0 1.25rem;max-width:22ch}
+
+@media (max-width:720px){
+  header.hero{padding:3.5rem 0 2.5rem}
+  section{grid-template-columns:1fr;padding:2.5rem 0}
+}
+@media (prefers-reduced-motion:no-preference){
+  .name span{animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
+  .name span:last-child{animation-delay:.12s}
+  @keyframes rise{from{opacity:0;transform:translateY(.25em)}to{opacity:1;transform:none}}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <h1 class="name"><span>Josef</span><span>Wehbi</span></h1>
+  <p class="role">Business Development Representative at Litmos and FinTech student at Bentley University.</p>
+  <div class="actions">
+    <a class="btn" href="Josef%20Wehbi%20Resume%202026.pdf" download>Download resume (PDF)</a>
+    <a href="https://www.linkedin.com/in/josefwehbi/">LinkedIn</a>
+    <a href="mailto:josefwehbi03@gmail.com">josefwehbi03@gmail.com</a>
+  </div>
+</header>
+
+<section aria-labelledby="about">
+  <h2 id="about">About</h2>
+  <div class="body">
+    <p>I'm a FinTech student at Bentley University, graduating in spring 2027, with minors in Professional Sales, Psychology, and Business Administration.</p>
+    <p>This summer at Litmos, I generated $500K+ in pipeline, the most on the sales team from July to August, and booked meetings at 200% of the full-time BDR quota. I've since moved into a part-time Business Development Representative role for the academic year, where I keep building pipeline and support the partnerships team.</p>
+    <p>I'm drawn to sales because I enjoy connecting people with solutions that actually solve their problems. I'm motivated by learning from high performers, contributing from day one, and growing into a closing role.</p>
+  </div>
+</section>
+
+<section aria-labelledby="experience">
+  <h2 id="experience">Experience</h2>
+  <div class="body">
+
+    <article class="job">
+      <h3 class="company">Litmos <small>Remote</small></h3>
+      <div class="position current">
+        <div class="position-head"><h4>Business Development Representative, part-time</h4><span class="dates">Sep 2026 – Present</span></div>
+        <ul><li>Invited back for the academic year to keep generating pipeline for Account Executives while supporting the partnerships team</li></ul>
+      </div>
+      <div class="position">
+        <div class="position-head"><h4>Sales Intern</h4><span class="dates">Jun 2026 – Aug 2026</span></div>
+        <ul>
+          <li>Generated $500K+ in sales pipeline, ranking #1 on the sales team from July to August</li>
+          <li>Booked meetings at 200% of the quota set for full-time BDRs</li>
+          <li>Advanced 100% of assigned qualification meetings to a follow-up with an Account Executive</li>
+          <li>Spearheaded outbound prospecting in the SMB segment, making up to 150 cold calls per day and sharing market feedback with leadership</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="job">
+      <h3 class="company">Wehbi Retail Group <small>Aalman El Chouf, Lebanon</small></h3>
+      <div class="position">
+        <div class="position-head"><h4>Sales &amp; Strategy Intern</h4><span class="dates">May 2025 – Aug 2025</span></div>
+        <ul>
+          <li>Supported operations across three retail units serving 500+ customers</li>
+          <li>Analyzed sales data to optimize layout and restocking, increasing margin product turnover by 15%</li>
+          <li>Built an Excel tracker to streamline vendor orders, reduce overstock, and improve delivery timing</li>
+          <li>Proposed checkout flow changes that reduced wait times during peak hours</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="job">
+      <h3 class="company">Nucar Chevrolet of Lowell <small>Lowell, MA</small></h3>
+      <div class="position">
+        <div class="position-head"><h4>Sales &amp; Lease Representative</h4><span class="dates">Sep 2024 – Dec 2024</span></div>
+        <ul>
+          <li>Sold 20+ vehicles per month while managing 100+ clients across walk-ins, web leads, and follow-ups</li>
+          <li>Achieved a 30–35% walk-in close rate by tailoring financing options to customer profiles</li>
+          <li>Coordinated with finance and service teams to streamline deal flow and post-sale support</li>
+          <li>Optimized CRM workflows to improve lead tracking, follow-ups, and deal visibility</li>
+        </ul>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section aria-labelledby="education">
+  <h2 id="education">Education</h2>
+  <div class="body">
+    <h3 class="company">Bentley University <small>Waltham, MA</small></h3>
+    <p style="margin:.4rem 0 0">Bachelor of Science in FinTech, expected spring 2027</p>
+    <p class="meta">Minors in Professional Sales, Psychology, and Business Administration</p>
+  </div>
+</section>
+
+<section aria-labelledby="skills">
+  <h2 id="skills">Skills and tools</h2>
+  <div class="body">
+    <div class="skill-group">
+      <h3>Sales</h3>
+      <ul class="tags"><li>Cold calling</li><li>Outbound prospecting</li><li>Pipeline generation</li><li>Lead qualification</li><li>Objection handling</li><li>SMB sales</li></ul>
+    </div>
+    <div class="skill-group">
+      <h3>Tools</h3>
+      <ul class="tags"><li>Salesforce</li><li>Gong</li><li>Orum</li><li>ZoomInfo</li><li>Apollo.io</li><li>HubSpot</li><li>Microsoft Excel</li></ul>
+    </div>
+    <div class="skill-group">
+      <h3>Certifications</h3>
+      <ul class="plain">
+        <li>HubSpot Sales Software Certification <span class="meta">HubSpot Academy, 2025</span></li>
+        <li>LinkedIn Sales Navigator Essentials <span class="meta">LinkedIn Learning, 2025</span></li>
+        <li>Microsoft Office Specialist: Excel Associate (MOS-200) <span class="meta">Microsoft, 2025</span></li>
+        <li>Salesforce Certified Sales Representative <span class="meta">Salesforce Trailhead, in progress</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Let's talk.</p>
+  <div class="actions">
+    <a class="btn" href="mailto:josefwehbi03@gmail.com">Email me</a>
+    <a href="https://www.linkedin.com/in/josefwehbi/">LinkedIn</a>
+    <a href="tel:+17812270661">781-227-0661</a>
+    <a href="Josef%20Wehbi%20Resume%202026.pdf" download>Resume (PDF)</a>
+  </div>
+</footer>
+
+</div>
+</body>
+</html>
