@@ -55,17 +55,15 @@ section > h2{font-family:var(--display);font-weight:700;font-size:1.35rem;letter
 
 /* About */
 .about{position:relative}
-.portrait{position:absolute;left:1.9rem;top:7.3rem;width:10rem;height:10rem;display:block;border-radius:50%;object-fit:cover;border:1px solid var(--rule);background:var(--surface)}
+.portrait{position:absolute;left:1.9rem;top:6.625rem;width:10rem;height:10rem;display:block;border-radius:50%;object-fit:cover;border:1px solid var(--rule);background:var(--surface)}
 
 /* Experience */
 .job{position:relative;padding-bottom:2.25rem}
 .job:last-child{padding-bottom:0}
 .job:has(.logo-badge){min-height:12.4rem}
 .job-body{}
-.logo-badge{position:absolute;left:-13.1rem;top:2.2rem;width:10rem;height:10rem;box-sizing:border-box;padding:.9rem;background:#fff;border:1px solid var(--rule);border-radius:14px;display:flex;align-items:center;justify-content:center}
+.logo-badge{position:absolute;left:-13.1rem;top:2.2rem;width:10rem;height:10rem;display:flex;align-items:flex-start;justify-content:center}
 .logo-badge img{max-width:100%;max-height:100%;width:auto;height:auto;display:block}
-.logo-litmos{top:6.7rem}
-.logo-nucar{top:3.5rem}
 .company{font-family:var(--display);font-weight:700;font-size:1.3rem;margin:0}
 .company small{font-family:var(--body);font-weight:400;font-size:.95rem;color:var(--muted);margin-left:.4rem}
 .position{margin-top:1rem;padding-left:1.1rem;border-left:3px solid var(--rule)}
@@ -89,18 +87,12 @@ li::marker{color:var(--muted)}
 .plain li{margin:.45rem 0}
 .meta{color:var(--muted)}
 
-/* Education: bigger, lower detail text to visually center against the tall logo */
-.edu-detail{font-size:1.15rem}
-.edu-detail.edu-degree{margin-top:3.7rem}
-
 @media (max-width:720px){
   header.hero{padding:3.5rem 0 2.5rem}
   section{grid-template-columns:1fr;padding:2.5rem 0}
   .portrait{position:static;width:6rem;height:6rem;margin:0 0 1.25rem}
   .job{padding-left:2.75rem}
-  .logo-badge,.logo-litmos,.logo-nucar{left:0;top:.15rem;width:2.1rem;height:2.1rem;padding:.3rem}
-  .edu-detail{font-size:1.0625rem}
-  .edu-detail.edu-degree{margin-top:.4rem}
+  .logo-badge{left:0;top:.15rem;width:2.1rem;height:2.1rem;align-items:center}
 }
 @media (prefers-reduced-motion:no-preference){
   .name span{animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
@@ -150,8 +142,8 @@ li::marker{color:var(--muted)}
   <div class="body">
 
     <article class="job">
-      <div class="logo-badge logo-litmos" aria-hidden="true">
-        <img src="assets/logos/litmos-color.png" alt="">
+      <div class="logo-badge" aria-hidden="true">
+        <img src="assets/logos/litmos-icon-color.png" alt="">
       </div>
       <div class="job-body">
         <h3 class="company">Litmos <small>Remote</small></h3>
@@ -187,7 +179,7 @@ li::marker{color:var(--muted)}
     </article>
 
     <article class="job">
-      <div class="logo-badge logo-nucar" aria-hidden="true">
+      <div class="logo-badge" aria-hidden="true">
         <img src="assets/logos/nucar-color.png" alt="">
       </div>
       <div class="job-body">
@@ -212,12 +204,12 @@ li::marker{color:var(--muted)}
   <div class="body">
     <article class="job">
       <div class="logo-badge" aria-hidden="true">
-        <img src="assets/logos/bentley-full.png" alt="">
+        <img src="assets/logos/bentley-icon-color.png" alt="">
       </div>
       <div class="job-body">
         <h3 class="company">Bentley University <small>Waltham, MA</small></h3>
-        <p class="edu-detail edu-degree">Bachelor of Science in FinTech, expected Spring 2027</p>
-        <p class="edu-detail meta">Minors in Professional Sales, Psychology, and Business Administration</p>
+        <p style="margin:.4rem 0 0">Bachelor of Science in FinTech, expected Spring 2027</p>
+        <p class="meta">Minors in Professional Sales, Psychology, and Business Administration</p>
       </div>
     </article>
   </div>
